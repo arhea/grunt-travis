@@ -16,22 +16,24 @@ module.exports = function(grunt) {
 
   grunt.registerTask('travis', 'Validate your travis yaml files', function() {
 
-    var file;
     var data = grunt.utils._.extend({},{
       src: "./.travis.yml",
+      dest: "./.travis.yml",
       validate: true
     },grunt.config("travis"));
 
-    if(data.src) {
-      file = data.src;
-    }
-
-    if(data.dest) {
-      file = data.dest;
-    }
+    var file = data.src;
 
     if(data && data.language) {
       var content = grunt.helper('travisBuildFile',data);
+
+      if(data.dest) {
+        file = data.dest;
+      } else {
+        grunt.log.error("You must provide a destination file for your yaml file.");
+      }
+
+      file = data.dest;
       grunt.file.write(file , content);
       grunt.log.writeln(file + " successfully written.");
     }
