@@ -41,8 +41,6 @@ module.exports = function(grunt) {
     var command = "travis-lint";
     if(file) {
       command = command + " " + file;
-    } else {
-      command = command + " ./.travis.yml";
     }
     return command;
   });
