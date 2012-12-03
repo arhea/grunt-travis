@@ -23,7 +23,7 @@
   "main": "grunt.js",
   "bin": "bin/grunt-travis",
   "engines": {
-    "node": ">= 0.8"
+    "node": ">= 0.6"
   },
   "scripts": {
     "test": "grunt test"
