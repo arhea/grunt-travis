@@ -1,7 +1,7 @@
 {
   "name": "grunt-travis",
   "description": "Validate travis yaml files.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/arhea/grunt-travis",
   "author": {
     "name": "Alex Rhea",
