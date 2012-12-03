@@ -23,9 +23,23 @@ grunt.loadNpmTasks('grunt-travis');
 
 ## Options
 
+Create a `.travis.yml`
 ```json
 travis: {
-  src: ".travis.yml"
+  dest: "./.travis.yml",
+  language: "node_js",
+  node_js: [0.6,0.4],
+  validate: true
+}
+```
+
+Note: The linter only supports node 0.6 and less as officially supported
+
+Just to validate.
+```json
+travis: {
+  src: "./.travis.yml",
+  validate: true
 }
 ```
 

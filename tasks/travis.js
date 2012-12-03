@@ -17,11 +17,10 @@ module.exports = function(grunt) {
   grunt.registerTask('travis', 'Validate your travis yaml files', function() {
 
     var file;
-    var done = this.async();
-    var exec = require('child_process').exec;
-    var data = grunt.utils._.extend({},grunt.config("travis"),{
-      src: "./.travis.yml"
-    });
+    var data = grunt.utils._.extend({},{
+      src: "./.travis.yml",
+      validate: true
+    },grunt.config("travis"));
 
     if(data.src) {
       file = data.src;
@@ -33,28 +32,32 @@ module.exports = function(grunt) {
 
     if(data && data.language) {
       var content = grunt.helper('travisBuildFile',data);
-      grunt.file.write( file , content );
+      grunt.file.write(file , content);
       grunt.log.writeln(file + " successfully written.");
     }
 
-    grunt.log.writeln("Validating File...");
+    if(data.validate) {
+      var exec = require('child_process').exec;
+      var done = this.async();
+      grunt.log.writeln("Validating File...");
 
-    exec("travis-lint " + file, function(error, stdout, stderr){
+      exec("travis-lint " + file, function(error, stdout, stderr){
 
-      grunt.log.writeln("Process Complete!");
-
-      if(error) {
-        grunt.log.writeln("Process complete with errors");
-        grunt.log.error( stderr );
-        done( false );
-      } else {
         grunt.log.writeln("Process Complete!");
-        grunt.log.writeln( "Travis Output:" );
-        grunt.log.write( stdout );
-        done( true );
-      }
 
-    });
+        if(error) {
+          grunt.log.writeln("Process complete with errors");
+          grunt.log.error( stderr );
+          done( false );
+        } else {
+          grunt.log.writeln("Process Complete!");
+          grunt.log.writeln( "Travis Output:" );
+          grunt.log.write( stdout );
+          done( true );
+        }
+
+      });
+    }
 
   });
 
