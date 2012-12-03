@@ -1,6 +1,6 @@
 {
   "name": "grunt-travis",
-  "description": "Validate and create travis yaml files.",
+  "description": "Validate travis yaml files.",
   "version": "0.1.0",
   "homepage": "https://github.com/arhea/grunt-travis",
   "author": {
@@ -32,6 +32,9 @@
     "grunt": "~0.3.16"
   },
   "keywords": [
+    "travis",
+    "travis-ci",
+    ".travis.yml",
     "gruntplugin"
   ]
 }
