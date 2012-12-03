@@ -1,6 +1,6 @@
 # grunt-travis [![Build Status](https://secure.travis-ci.org/arhea/grunt-travis.png?branch=master)](https://travis-ci.org/arhea/grunt-travis)
 
-Validate and create travis yaml files.
+Validate and create travis yaml files from your grunt build process.
 
 ## Dependencies
 You must install the travis-lint gem.

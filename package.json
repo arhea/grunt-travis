@@ -1,7 +1,7 @@
 {
   "name": "grunt-travis",
-  "description": "Validate travis yaml files.",
-  "version": "0.2.2",
+  "description": "Create and validate travis yaml files from your grunt config.",
+  "version": "0.2.3",
   "homepage": "https://github.com/arhea/grunt-travis",
   "author": {
     "name": "Alex Rhea",
