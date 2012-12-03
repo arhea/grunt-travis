@@ -1,4 +1,4 @@
-# grunt-travis
+# grunt-travis [![Build Status](https://secure.travis-ci.org/arhea/grunt-travis.png?branch=master)](https://travis-ci.org/arhea/grunt-travis)
 
 Validate and create travis yaml files.
 
