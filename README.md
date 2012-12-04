@@ -10,7 +10,9 @@ gem install travis-lint
 ```
 
 ## Limitations
-Currently the travis-lint script gem is outdated. So with node it says the versions are out of date. They have been fixed in the repository but not pushed out. So it will give you an error there. To work around this currently only use node 0.6.
+~~Currently the travis-lint script gem is outdated. So with node it says the versions are out of date. They have been fixed in the repository but not pushed out. So it will give you an error there. To work around this currently only use node 0.6.~~
+
+Fixed with the latest push to the gem server
 
 ## Getting Started
 Install this grunt plugin next to your project's [grunt.js gruntfile][getting_started] with: `npm install grunt-travis`
